@@ -1,0 +1,42 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css');
+
+:root {
+  --content-width: 1300px;
+
+  --clr-primary: #fff;
+  --clr-nav: #00d1b2;
+  --clr-nav-active: #999;
+  --clr-nav-hover: #666;
+  --clr-message: #444;
+  --clr-bg: #f1f1f1;
+
+  --border-radius: 0.25rem;
+  --border-gray: 1px solid #cecece;
+  --border-btn: 2px solid #00d1b2;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: var(--clr-bg);
+}
+
+::-webkit-scrollbar{
+  width: 10px;
+  background-color: var(--clr-nav-hover);
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: var(--clr-nav);
+}

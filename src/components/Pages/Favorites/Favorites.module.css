@@ -1,0 +1,13 @@
+.no-favorites {
+  text-align: center;
+}
+
+.message {
+  margin: 3rem 0;
+  text-align: center;
+  color: var(--clr-message);
+}
+
+.cheers {
+  color: var(--clr-nav-active);
+}
