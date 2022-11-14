@@ -1,15 +1,20 @@
-import styles from './BeerCard.module.css';
-import audio from '../../assets/beer.mp3';
+import { useNavigate } from 'react-router-dom';
+
 import useFavoritesCtx from '../../hooks/useFavoritesCtx';
+
+import audio from '../../assets/beer.mp3';
+import styles from './BeerCard.module.css';
 
 let openBeerSound = new Audio(audio);
 
 const BeerCard = ({ beer }) => {
+  const navigate = useNavigate();
   const { favorites, addToFavorites, removeFromFavorites } = useFavoritesCtx();
-  const isFav = favorites.find(b => b.id === beer.id);
+  const isFav = favorites.find((b) => b.id === beer.id);
 
-  const playSoundHandler = () => {
+  const showDetailsHandler = () => {
     openBeerSound.play();
+    navigate('/details/' + beer.id);
   };
 
   const favoritesHandler = (item) => {
@@ -24,16 +29,12 @@ const BeerCard = ({ beer }) => {
   return (
     <article className={styles.beer}>
       <button onClick={() => favoritesHandler(beer)} className={styles.fav}>
-        <i
-          className={
-            isFav ? 'fa-solid fa-star' : 'fa-regular fa-star'
-          }
-        />
+        <i className={isFav ? 'fa-solid fa-star' : 'fa-regular fa-star'} />
       </button>
       <div className={styles.content}>
         <div className={styles['content__img-area']}>
           <img
-            onClick={playSoundHandler}
+            onClick={showDetailsHandler}
             className={styles.content__img}
             src={beer.image_url}
             alt='beer bottle'

@@ -12,6 +12,10 @@
   box-shadow: 4px 3px 10px -1px #bcbcbc;
 }
 
+.beer:hover {
+  border-color: #999;
+}
+
 .fav {
   display: block;
   margin-left: auto;
