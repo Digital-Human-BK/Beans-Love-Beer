@@ -1,4 +1,5 @@
 
+import Footer from './Footer';
 import styles from './Layout.module.css';
 import Navigation from './Navigation';
 
@@ -7,6 +8,7 @@ const Layout = ({ children }) => {
     <>
       <Navigation />
       <main className={styles.main}>{children}</main>
+      <Footer/>
     </>
   );
 };

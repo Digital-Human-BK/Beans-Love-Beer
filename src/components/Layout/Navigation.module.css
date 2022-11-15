@@ -21,6 +21,7 @@
 
 .navbar ul {
   display: flex;
+  align-items: center;
   gap: 0.5rem;
 }
 
@@ -39,4 +40,14 @@
 
 .navbar a:hover {
   transform: scale(1.1);
+}
+
+.wallet {
+  background: none;
+  color: var(--clr-primary);
+  font-size: 1.1rem;
+  line-height: 0;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
 }

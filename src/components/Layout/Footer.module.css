@@ -1,0 +1,12 @@
+.footer {
+  width: var(--content-width);
+  height: 60px;
+  margin: 0 auto;
+  color: var(--clr-primary);
+  background-color: var(--clr-nav);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+}

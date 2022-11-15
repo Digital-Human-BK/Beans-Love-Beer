@@ -1,0 +1,54 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  border: 1px solid black;
+  z-index: 19;
+}
+
+.wallet {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 500px;
+  height: 100vh;
+  padding: 1rem 3rem;
+  background-color: var(--clr-wallet);
+  -webkit-box-shadow: -3px 0px 15px 2px #999;
+  box-shadow: 3px 0px 10px 2px #999;
+  z-index: 20;
+}
+
+.close-btn {
+  color: var(--clr-nav);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.25rem;
+}
+
+.wallet-controls {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  margin-top: 1rem;
+  color: var(--clr-nav-hover);
+}
+
+.error {
+  margin-top: 1rem;
+  text-align: center;
+  color: #b95b5b;
+}
+
+.loading {
+  font-size: 1.25rem;
+  color: var(--clr-nav);
+}
