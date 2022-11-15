@@ -1,4 +1,5 @@
 <a name="readme-top"></a>
+
 <div align="center">
   <a href="https://beans-love-beer.netlify.app">
     <img src="https://res.cloudinary.com/dio4dx3uy/image/upload/v1668526421/image_y4s4gq.png" alt="Logo" width="800">
@@ -15,9 +16,14 @@
 
 <!-- ABOUT -->
 
-## About The Project
+## Assignment description
 
 This project is a job interview assignment.
+
+```sh
+https://punkapi.com/documentation/v2
+```
+
 <div align="center">
     <img src="https://res.cloudinary.com/dio4dx3uy/image/upload/v1668526436/image_1_sqhhsv.png" alt="description" width="800">
 </div>
@@ -56,11 +62,12 @@ Make sure you have npm installed on your machine.
    git clone https://github.com/Digital-Human-BK/Beans-Love-Beer.git
    ```
 2. Install NPM packages
+
    ```sh
    npm install
    ```
 
-4. Run the development server command and open the app at http://127.0.0.1:5173/
+3. Run the development server command and open the app at http://127.0.0.1:5173/
    ```sh
    npm run dev
    ```
@@ -69,7 +76,7 @@ Make sure you have npm installed on your machine.
 
 <!-- CONTACT -->
 
-## Contact
+## Contacts
 
 Biser Karazhov - [Linked In](https://www.linkedin.com/in/biser-karadzhov-b03594238/)
 
