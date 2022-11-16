@@ -40,9 +40,9 @@ const Home = () => {
         Get Random Beer
       </Button>
       {loading && <LoadingSpinner />}
-      {error && <h2>{error}</h2>}
+      {error && <h2 className={styles.error}>{error}</h2>}
       {!loading && !error && <BeersList beers={beers} />}
-      <PageControls onPageChange={pageChangeHandler} page={page} />
+      {!error && !loading && <PageControls onPageChange={pageChangeHandler} page={page} />}
     </>
   );
 };

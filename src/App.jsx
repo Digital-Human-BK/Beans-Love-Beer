@@ -8,6 +8,7 @@ import Search from './components/Pages/Search/Search';
 import Random from './components/Pages/Random/Random';
 import Details from './components/Pages/Details/Details';
 import Favorites from './components/Pages/Favorites/Favorites';
+import NotFound from './components/Pages/NotFound/NotFound';
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
           <Route path='/favorites' element={<Favorites />} />
           <Route path='/search' element={<Search />} />
           <Route path='/details/:beerId' element={<Details/>}/>
+          <Route path='*' element={<NotFound/>}/>
         </Routes>
       </Layout>
     </FavoritesCtxProvider>

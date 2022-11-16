@@ -1,0 +1,17 @@
+.container {
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.code {
+  font-size: 4rem;
+  color: var(--clr-nav-hover);
+}
+
+.message {
+  font-size: 1.25rem;
+}
