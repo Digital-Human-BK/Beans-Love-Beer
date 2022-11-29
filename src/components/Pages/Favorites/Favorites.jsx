@@ -7,7 +7,7 @@ import BeersList from '../../UI/BeerList';
 const Favorites = () => {
   const { favorites } = useFavoritesCtx();
 
-  const emptyFavoritesContent = (
+  const emptyFavContent = (
     <div className={styles['no-favorites']}>
       <h2 className={styles.message}>You haven't had any beer yet.</h2>
       <img src={beermug} alt="beer mug" />
@@ -17,8 +17,7 @@ const Favorites = () => {
 
   return (
     <>
-      {favorites.length === 0 && emptyFavoritesContent}    
-      {favorites.length > 0 && <BeersList beers={favorites} />}
+      {favorites.length === 0 ? emptyFavContent : <BeersList beers={favorites} />} 
     </>
   );
 };

@@ -4,6 +4,7 @@ import { useSearchParams } from 'react-router-dom';
 import useFetch from '../../../hooks/useFetch';
 import { BASE_URL, queries } from '../../../api/api';
 
+import ErrorMsg from '../../UI/ErrorMsg';
 import SearchBar from '../../UI/SearchBar';
 import BeersList from '../../UI/BeerList';
 import LoadingSpinner from '../../UI/LoadingSpinner';
@@ -22,7 +23,7 @@ const Search = () => {
     <>
       <SearchBar defaultQuery={query} />
       {loading && <LoadingSpinner/>}
-      {error && <h2>{error}</h2>}
+      {error && <ErrorMsg>{error}</ErrorMsg>}
       {!loading && !error && <BeersList beers={beers} />}
     </>
   );

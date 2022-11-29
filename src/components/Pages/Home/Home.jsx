@@ -5,6 +5,7 @@ import useFetch from '../../../hooks/useFetch';
 import { BASE_URL, queries } from '../../../api/api';
 
 import styles from './Home.module.css';
+import ErrorMsg from '../../UI/ErrorMsg';
 import SearchBar from '../../UI/SearchBar';
 import BeersList from '../../UI/BeerList';
 import LoadingSpinner from '../../UI/LoadingSpinner';
@@ -19,7 +20,7 @@ const Home = () => {
   const { data: beers, loading, error, sendRequest } = useFetch();
 
   useEffect(() => {
-    sendRequest(BASE_URL + queries.pageNum + page + queries.perPage);
+    sendRequest(BASE_URL+ queries.pageNum + page + queries.perPage);
   }, [sendRequest, page]);
 
   const pageChangeHandler = (value) => {
@@ -36,14 +37,17 @@ const Home = () => {
   return (
     <>
       <SearchBar />
+
       <p className={styles.or}>or</p>
+
       <Button callback={() => navigate('/random')} classes={'middle'}>
         Get Random Beer
       </Button>
+
       {loading && <LoadingSpinner />}
-      {error && <h2 className={styles.error}>{error}</h2>}
+      {error && <ErrorMsg>{error}</ErrorMsg>}
       {!loading && !error && <BeersList beers={beers} />}
-      {!error && !loading && <PageControls onPageChange={pageChangeHandler} page={page} />}
+      {!loading && !error && <PageControls onPageChange={pageChangeHandler} page={page} />}
     </>
   );
 };
