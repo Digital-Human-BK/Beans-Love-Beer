@@ -1,9 +1,11 @@
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+
 import useFetch from '../../../hooks/useFetch';
-import LoadingSpinner from '../../UI/LoadingSpinner';
+import { BASE_URL } from '../../../api/api';
 
 import styles from './Details.module.css';
+import LoadingSpinner from '../../UI/LoadingSpinner';
 
 const Details = () => {
   const { beerId } = useParams();
@@ -11,7 +13,7 @@ const Details = () => {
   const beer = data[0];
 
   useEffect(() => {
-    sendRequest(`https://api.punkapi.com/v2/beers/${beerId}`);
+    sendRequest(BASE_URL + '/' + beerId);
   }, [sendRequest]);
 
   if(loading) {

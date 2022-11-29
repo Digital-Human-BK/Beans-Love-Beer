@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import useFetch from '../../../hooks/useFetch';
+import { BASE_URL, endpoints } from '../../../api/api';
 
 import LoadingSpinner from '../../UI/LoadingSpinner';
 import BeersList from '../../UI/BeerList';
@@ -12,7 +13,7 @@ const Random = () => {
   const { data: beers, loading, error, sendRequest } = useFetch();
 
   useEffect(() => {
-    sendRequest(`https://api.punkapi.com/v2/beers/random`);
+    sendRequest(BASE_URL + endpoints.random);
   }, [sendRequest]);
 
   return (

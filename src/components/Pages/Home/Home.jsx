@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
 import useFetch from '../../../hooks/useFetch';
+import { BASE_URL, queries } from '../../../api/api';
 
 import styles from './Home.module.css';
 import SearchBar from '../../UI/SearchBar';
@@ -18,7 +19,7 @@ const Home = () => {
   const { data: beers, loading, error, sendRequest } = useFetch();
 
   useEffect(() => {
-    sendRequest(`https://api.punkapi.com/v2/beers?page=${page}&per_page=9`);
+    sendRequest(BASE_URL + queries.pageNum + page + queries.perPage);
   }, [sendRequest, page]);
 
   const pageChangeHandler = (value) => {

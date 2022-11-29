@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
 import useFetch from '../../../hooks/useFetch';
+import { BASE_URL, queries } from '../../../api/api';
 
 import SearchBar from '../../UI/SearchBar';
 import BeersList from '../../UI/BeerList';
@@ -14,7 +15,7 @@ const Search = () => {
   const { data: beers, loading, error, sendRequest } = useFetch();
 
   useEffect(()=> {
-    sendRequest(`https://api.punkapi.com/v2/beers?beer_name=${query}`);
+    sendRequest(BASE_URL + queries.searchByName + query);
   }, [query, sendRequest])
 
   return (
