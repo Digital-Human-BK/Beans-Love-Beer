@@ -1,7 +1,6 @@
 .header {
   max-width: var(--content-width);
   margin: 0 auto;
-  margin-bottom: 1rem;
   padding: 0.5rem;
   height: 60px;
   background-color: var(--clr-nav);

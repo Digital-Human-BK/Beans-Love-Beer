@@ -1,11 +1,26 @@
-.or {
-  color: var(--clr-message);
-  font-size: 1.25rem;
+.welcome {
+  position: absolute;
+  top: calc(120px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  height: 60px;
+  width: 600px;
+  color: var(--clr-nav-hover);
   text-align: center;
-  margin-bottom: 1rem;
+  background-color: var(--clr-bg);
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
 }
 
-.error {
-  padding: 5rem 0;
+.hero {
+  margin-top: 2rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.disclaimer {
+  font-size: 1.25rem;
   text-align: center;
+  margin-top: 0.25rem;
 }

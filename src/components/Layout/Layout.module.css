@@ -1,6 +1,6 @@
 .main {
   max-width: var(--content-width);
   margin: 0 auto;
-  padding: 2rem 0;
-  min-height: calc(100vh - (104px + 2rem));
+  padding-top: 2rem;
+  min-height: calc(100vh - 120px);
 }

@@ -15,6 +15,7 @@ const WalletCtxProvider = ({ children }) => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [isConnected, setIsConnected] = useState(false);
+  console.log(isConnected);
 
   const connectWallet = async () => {
     setError(null);
@@ -57,11 +58,11 @@ const WalletCtxProvider = ({ children }) => {
           },
         ],
       });
-      setIsConnected(false);
     } catch (err) {
       setError(err.message);
     } finally {
       setLoading(false);
+      setIsConnected(false);
     }
   };
 

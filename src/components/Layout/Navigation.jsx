@@ -1,10 +1,13 @@
 import { Link, NavLink } from 'react-router-dom';
 import { useState } from 'react';
 
+import useWalletCtx from '../../hooks/useWalletCtx';
+
 import styles from './Navigation.module.css';
 import Wallet from '../UI/Wallet';
 
 const Navigation = () => {
+  const { isConnected } = useWalletCtx();
   const [showWallet, setShowWallet] = useState(false);
 
   const toggleWalletHandler = () => {
@@ -27,22 +30,30 @@ const Navigation = () => {
                 Home
               </NavLink>
             </li>
-            <li>
-              <NavLink
-                className={({ isActive }) => (isActive ? styles.active : '')}
-                to='/catalog'
-              >
-                Catalog
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className={({ isActive }) => (isActive ? styles.active : '')}
-                to='/favorites'
-              >
-                Favorites
-              </NavLink>
-            </li>
+            {isConnected && (
+              <>
+                <li>
+                  <NavLink
+                    className={({ isActive }) =>
+                      isActive ? styles.active : ''
+                    }
+                    to='/catalog'
+                  >
+                    Catalog
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    className={({ isActive }) =>
+                      isActive ? styles.active : ''
+                    }
+                    to='/favorites'
+                  >
+                    Favorites
+                  </NavLink>
+                </li>
+              </>
+            )}
             <li>
               <button onClick={toggleWalletHandler} className={styles.wallet}>
                 <i className='fa-solid fa-wallet'></i>

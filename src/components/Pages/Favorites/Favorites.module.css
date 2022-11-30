@@ -1,11 +1,12 @@
 .no-favorites {
   text-align: center;
+  padding-top: 10rem;
 }
 
 .message {
-  margin: 3rem 0;
   text-align: center;
   color: var(--clr-message);
+  margin-bottom: 2rem;
 }
 
 .cheers {

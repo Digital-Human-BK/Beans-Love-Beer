@@ -15,7 +15,6 @@ import Button from '../../UI/Button';
 const Catalog = () => {
   const navigate = useNavigate();
   const { pageId } = useParams();
-  console.log(pageId);
   const page = Number(pageId) || 1;
 
   const { data: beers, loading, error, sendRequest } = useFetch();
