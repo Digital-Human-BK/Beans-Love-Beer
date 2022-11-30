@@ -25,11 +25,7 @@ const Catalog = () => {
   }, [sendRequest, page]);
 
   const pageChangeHandler = (value) => {
-    if (page + value <= 0) {
-      navigate('/catalog/1');
-    } else {
-      navigate(`/catalog/${page + value}`);
-    }
+    navigate(`/catalog/${page + value}`);
   };
 
   return (
