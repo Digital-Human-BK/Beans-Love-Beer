@@ -37,6 +37,10 @@
   justify-content: center;
 }
 
+.wallet-img {
+  margin-bottom: 2rem;
+}
+
 .title {
   margin-top: 1rem;
   color: var(--clr-nav-hover);

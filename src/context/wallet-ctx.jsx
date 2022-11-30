@@ -5,7 +5,9 @@ export const WalletCtx = createContext({
   account: { address: null, balance: null },
   error: null,
   loading: false,
+  showWallet: false,
   isConnected: false,
+  toggleWallet: () => {},
   connectWallet: () => {},
   disconnectWallet: () => {},
 });
@@ -14,8 +16,12 @@ const WalletCtxProvider = ({ children }) => {
   const [account, setAccount] = useState({ address: null, balance: null });
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [showWallet, setShowWallet] = useState(false);
   const [isConnected, setIsConnected] = useState(false);
-  console.log(isConnected);
+
+  const toggleWallet = () => {
+    setShowWallet((prev) => !prev);
+  };
 
   const connectWallet = async () => {
     setError(null);
@@ -72,7 +78,9 @@ const WalletCtxProvider = ({ children }) => {
         account,
         error,
         loading,
+        showWallet,
         isConnected,
+        toggleWallet,
         connectWallet,
         disconnectWallet,
       }}

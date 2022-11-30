@@ -14,6 +14,16 @@
   background-color: var(--clr-nav);
 }
 
+.btn.contained {
+  color: var(--clr-primary);
+  background-color: var(--clr-nav);
+}
+
+.btn.contained:hover {
+  color: var(--clr-nav);
+  background-color: transparent;
+}
+
 .middle {
   display: block;
   margin: 0 auto;

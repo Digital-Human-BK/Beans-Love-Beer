@@ -1,4 +1,5 @@
 import useWalletCtx from '../../hooks/useWalletCtx';
+import wallet from '../../assets/wallet.png';
 
 import styles from './Wallet.module.css';
 import Button from './Button';
@@ -21,6 +22,7 @@ const Wallet = ({ toggleWallet }) => {
           <i className='fa-solid fa-x'></i>
         </button>
         <div className={styles['wallet-controls']}>
+          <img className={styles['wallet-img']} src={wallet} alt="wallet" />
           {(!isConnected || error) && (
             <Button callback={connectWallet}>Connect Wallet</Button>
           )}

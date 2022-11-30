@@ -7,12 +7,7 @@ import styles from './Navigation.module.css';
 import Wallet from '../UI/Wallet';
 
 const Navigation = () => {
-  const { isConnected } = useWalletCtx();
-  const [showWallet, setShowWallet] = useState(false);
-
-  const toggleWalletHandler = () => {
-    setShowWallet((prev) => !prev);
-  };
+  const { isConnected,showWallet, toggleWallet } = useWalletCtx();
 
   return (
     <>
@@ -55,14 +50,14 @@ const Navigation = () => {
               </>
             )}
             <li>
-              <button onClick={toggleWalletHandler} className={styles.wallet}>
+              <button onClick={toggleWallet} className={styles.wallet}>
                 <i className='fa-solid fa-wallet'></i>
               </button>
             </li>
           </ul>
         </nav>
       </header>
-      {showWallet && <Wallet toggleWallet={toggleWalletHandler} />}
+      {showWallet && <Wallet toggleWallet={toggleWallet} />}
     </>
   );
 };
