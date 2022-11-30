@@ -14,7 +14,7 @@ const Details = () => {
   const beer = data[0];
 
   useEffect(() => {
-    sendRequest(BASE_URL + '/a' + beerId);
+    sendRequest(BASE_URL + '/' + beerId);
   }, [sendRequest]);
 
   return (

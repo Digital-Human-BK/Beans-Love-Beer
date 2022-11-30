@@ -1,4 +1,4 @@
-const beersPerPage = 9;
+const beersPerPage = 12;
 
 export const BASE_URL = 'https://api.punkapi.com/v2/beers';
 
@@ -8,6 +8,6 @@ export const endpoints = {
 
 export const queries = {
   searchByName: '?beer_name=',
-  pageNum: '?page=',
+  pageNumQuery: '?page=',
   perPage: `&per_page=${beersPerPage}`,
 };

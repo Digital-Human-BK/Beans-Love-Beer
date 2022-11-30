@@ -14,7 +14,7 @@ const Random = () => {
   const { data: beers, loading, error, sendRequest } = useFetch();
 
   useEffect(() => {
-    sendRequest(BASE_URL + endpoints.random + 'a');
+    sendRequest(BASE_URL + endpoints.random);
   }, [sendRequest]);
 
   return (

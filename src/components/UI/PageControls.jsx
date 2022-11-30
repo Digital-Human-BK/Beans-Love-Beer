@@ -1,15 +1,29 @@
-import styles from './PageControls.module.css'
+import styles from './PageControls.module.css';
 
-const PageControls = ({onPageChange, page}) => {
+const PageControls = ({ onPageChange, page, nextBtnDisabled }) => {
   return (
     <div className={styles.container}>
-      <button onClick={() => onPageChange(-10)}>Prev 10</button>
-      <button onClick={() => onPageChange(-1)}>Prev</button>
-      <span>Page: {page}</span>
-      <button onClick={() => onPageChange(1)}>Next</button>
-      <button onClick={() => onPageChange(10)}>Next 10</button>
-    </div>
-  )
-}
+      <button
+        onClick={() => onPageChange(-1)}
+        disabled={page - 1 < 1 ? true : false}
+        className={page - 1 < 1 ? styles.disabled : ''}
+      >
+        <i className='fa-solid fa-chevron-left'></i> Prev
+      </button>
 
-export default PageControls
+      <span>
+        Page: <strong>{page}</strong>
+      </span>
+
+      <button
+        onClick={() => onPageChange(1)}
+        disabled={nextBtnDisabled}
+        className={nextBtnDisabled ? styles.disabled : ''}
+      >
+        Next <i className='fa-solid fa-chevron-right'></i>
+      </button>
+    </div>
+  );
+};
+
+export default PageControls;

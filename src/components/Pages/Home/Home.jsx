@@ -15,39 +15,41 @@ import Button from '../../UI/Button';
 const Home = () => {
   const navigate = useNavigate();
   const { pageId } = useParams();
-  const page = pageId || 1;
+  const page = Number(pageId) || 1;
 
   const { data: beers, loading, error, sendRequest } = useFetch();
+  const nextBtnDisabled = !beers[11];
 
   useEffect(() => {
-    sendRequest(BASE_URL+ queries.pageNum + page + queries.perPage);
+    sendRequest(BASE_URL + queries.pageNumQuery + page + queries.perPage);
   }, [sendRequest, page]);
 
   const pageChangeHandler = (value) => {
-    const pageNum = Number(page);
-    if (pageNum + value <= 0) {
+    if (page + value <= 0) {
       navigate('/1');
-    } else if (pageNum + value >= 37) {
-      navigate('/37');
     } else {
-      navigate(`/${pageNum + value}`);
+      navigate(`/${page + value}`);
     }
   };
 
   return (
     <>
       <SearchBar />
-
       <p className={styles.or}>or</p>
-
       <Button callback={() => navigate('/random')} classes={'middle'}>
-        Get Random Beer
+        Get a Random Beer
       </Button>
 
       {loading && <LoadingSpinner />}
       {error && <ErrorMsg>{error}</ErrorMsg>}
       {!loading && !error && <BeersList beers={beers} />}
-      {!loading && !error && <PageControls onPageChange={pageChangeHandler} page={page} />}
+      {!loading && !error && (
+        <PageControls
+          onPageChange={pageChangeHandler}
+          page={page}
+          nextBtnDisabled={nextBtnDisabled}
+        />
+      )}
     </>
   );
 };

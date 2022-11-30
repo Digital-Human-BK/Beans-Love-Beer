@@ -3,6 +3,12 @@
   text-align: center;
 }
 
+.container strong {
+  font-size: 1.5rem;
+  vertical-align: middle;
+  color: var(--clr-nav-hover);
+}
+
 .container button {
   background-color: var(--clr-nav);
   border: none;
@@ -16,3 +22,14 @@
 .container button:hover {
   opacity: 0.7;
 }
+
+.container button.disabled {
+  background-color: var(--clr-nav-active);
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.container button.disabled:hover {
+  background-color: var(--clr-nav-active);
+}
+
