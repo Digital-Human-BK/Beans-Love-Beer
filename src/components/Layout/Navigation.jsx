@@ -30,6 +30,14 @@ const Navigation = () => {
             <li>
               <NavLink
                 className={({ isActive }) => (isActive ? styles.active : '')}
+                to='/catalog'
+              >
+                Catalog
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) => (isActive ? styles.active : '')}
                 to='/favorites'
               >
                 Favorites
