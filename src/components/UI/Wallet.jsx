@@ -4,25 +4,27 @@ import wallet from '../../assets/wallet.png';
 import styles from './Wallet.module.css';
 import Button from './Button';
 
-const Wallet = ({ toggleWallet }) => {
+const Wallet = () => {
   const {
     account,
     error,
     loading,
+    showWallet,
     isConnected,
+    toggleWallet,
     connectWallet,
     disconnectWallet,
   } = useWalletCtx();
 
   return (
     <>
-      <div onClick={toggleWallet} className={styles.backdrop} />
-      <aside className={styles.wallet}>
+      {showWallet && <div onClick={toggleWallet} className={styles.backdrop} />}
+      <aside className={`${styles.wallet} ${showWallet ? styles.active : ''}`}>
         <button onClick={toggleWallet} className={styles['close-btn']}>
           <i className='fa-solid fa-x'></i>
         </button>
         <div className={styles['wallet-controls']}>
-          <img className={styles['wallet-img']} src={wallet} alt="wallet" />
+          <img className={styles['wallet-img']} src={wallet} alt='wallet' />
           {(!isConnected || error) && (
             <Button callback={connectWallet}>Connect Wallet</Button>
           )}

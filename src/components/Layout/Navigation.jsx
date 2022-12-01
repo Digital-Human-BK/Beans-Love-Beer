@@ -1,5 +1,4 @@
 import { Link, NavLink } from 'react-router-dom';
-import { useState } from 'react';
 
 import useWalletCtx from '../../hooks/useWalletCtx';
 
@@ -7,7 +6,7 @@ import styles from './Navigation.module.css';
 import Wallet from '../UI/Wallet';
 
 const Navigation = () => {
-  const { isConnected,showWallet, toggleWallet } = useWalletCtx();
+  const { isConnected, toggleWallet } = useWalletCtx();
 
   return (
     <>
@@ -57,7 +56,7 @@ const Navigation = () => {
           </ul>
         </nav>
       </header>
-      {showWallet && <Wallet toggleWallet={toggleWallet} />}
+      <Wallet />
     </>
   );
 };

@@ -11,14 +11,22 @@
 .wallet {
   position: fixed;
   top: 0;
-  right: 0;
+  right: -500px;
   width: 500px;
   height: 100vh;
   padding: 1rem 3rem;
   background-color: var(--clr-wallet);
   -webkit-box-shadow: -3px 0px 15px 2px #999;
   box-shadow: 3px 0px 10px 2px #999;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
   z-index: 20;
+}
+
+.active {
+  right: 0;
 }
 
 .close-btn {
@@ -55,4 +63,19 @@
 .loading {
   font-size: 1.25rem;
   color: var(--clr-nav);
+}
+
+@media screen and (max-width: 600px) {
+  .wallet {
+    width: 100%;
+    right: -100%;
+  }
+
+  .active {
+    right: 0;
+  }
+
+  .backdrop {
+    display: none;
+  }
 }
