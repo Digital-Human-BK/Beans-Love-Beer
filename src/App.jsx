@@ -13,6 +13,8 @@ import RequireAuth from './components/Layout/RequireAuth';
 import NotFound from './components/Pages/NotFound/NotFound';
 import Favorites from './components/Pages/Favorites/Favorites';
 
+import CatalogMUI from './components/Pages/Catalog/CatalogMUI';
+
 const App = () => {
   return (
     <WalletCtxProvider>
@@ -25,6 +27,10 @@ const App = () => {
             <Route element={<RequireAuth />}>
               <Route path='/catalog' element={<Catalog />} />
               <Route path='/catalog/:pageId' element={<Catalog />} />
+
+              <Route path='/catalog2' element={<CatalogMUI />} />
+              <Route path='/catalog2/:pageId' element={<CatalogMUI />} />
+              
               <Route path='/random' element={<Random />} />
               <Route path='/favorites' element={<Favorites />} />
               <Route path='/search' element={<Search />} />

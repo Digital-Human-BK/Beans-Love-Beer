@@ -24,3 +24,21 @@
 .another {
   color: var(--clr-nav-active);
 }
+
+@media screen and (max-width: 1300px) {
+  .beers-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .beers-list {
+    grid-template-columns: repeat(1, auto);
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .beers {
+    padding: 0 1rem;
+  }
+}

@@ -3,6 +3,7 @@ import beersImg from '../../assets/beers.png';
 import BeerCard from './BeerCard';
 
 const BeersList = ({ beers }) => {
+  console.log('render');
   return (
     <section className={styles.beers}>
       <ul className={styles['beers-list']}>

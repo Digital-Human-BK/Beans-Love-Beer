@@ -17,7 +17,6 @@ const useFetch = () => {
         // throw new Error('Something went wrong');
       }
       const fetchedData = await response.json();
-      console.log(fetchedData);
       setData(fetchedData);
     } catch (err) {
       console.log(err);
