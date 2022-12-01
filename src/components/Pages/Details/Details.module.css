@@ -1,6 +1,6 @@
 .beer-details {
-  max-width: 1100px;
-  padding: 2rem 0;
+  max-width: 80%;
+  padding: 2rem;
   margin: 2rem auto;
   display: flex;
   justify-content: center;
@@ -64,3 +64,36 @@
   margin-left: 2rem;
 }
 
+@media screen and (max-width: 900px) {
+  .desc {
+    text-align: left;
+  }
+  .additional_info {
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .beer-details {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .beer__img {
+    height: 300px;
+  }
+
+  .beer__content {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .beer-details {
+    padding: 2rem 1rem;
+  }
+
+  .beer__img {
+    height: 250px;
+  }
+}
