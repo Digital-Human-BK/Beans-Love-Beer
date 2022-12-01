@@ -2,7 +2,7 @@ import { ethers } from 'ethers';
 import { createContext, useState } from 'react';
 
 export const WalletCtx = createContext({
-  account: { address: null, balance: null },
+  account: null,
   error: null,
   loading: false,
   showWallet: false,
@@ -13,11 +13,15 @@ export const WalletCtx = createContext({
 });
 
 const WalletCtxProvider = ({ children }) => {
-  const [account, setAccount] = useState({ address: null, balance: null });
+  const [account, setAccount] = useState(
+    JSON.parse(sessionStorage.getItem('mmWallet'))
+  );
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [showWallet, setShowWallet] = useState(false);
-  const [isConnected, setIsConnected] = useState(false);
+  const [isConnected, setIsConnected] = useState(
+    !!JSON.parse(sessionStorage.getItem('mmWallet'))
+  );
 
   const toggleWallet = () => {
     setShowWallet((prev) => !prev);
@@ -42,6 +46,12 @@ const WalletCtxProvider = ({ children }) => {
       const balance = await signer.getBalance();
       const convertedToEth = balance / 1e18;
       setIsConnected(true);
+
+      sessionStorage.setItem(
+        'mmWallet',
+        JSON.stringify({ address: accounts[0], balance: convertedToEth })
+      );
+
       setAccount({ address: accounts[0], balance: convertedToEth });
     } catch (err) {
       console.log(err);
@@ -53,7 +63,8 @@ const WalletCtxProvider = ({ children }) => {
 
   const disconnectWallet = async () => {
     setLoading(true);
-    setAccount({ address: null, balance: null });
+    sessionStorage.removeItem('mmWallet');
+    setAccount(null);
 
     try {
       await window.ethereum.request({

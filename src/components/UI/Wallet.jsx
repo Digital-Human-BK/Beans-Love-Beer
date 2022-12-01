@@ -29,7 +29,7 @@ const Wallet = () => {
             <Button callback={connectWallet}>Connect Wallet</Button>
           )}
 
-          {!error && account.address !== null && account.balance !== null && (
+          {!error && account !== null && (
             <>
               <Button callback={disconnectWallet}>Disconnect wallet</Button>
               <p className={styles.title}>Wallet address: </p>
