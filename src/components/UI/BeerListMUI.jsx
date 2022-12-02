@@ -1,14 +1,14 @@
 import styles from './BeersList.module.css';
 import beersImg from '../../assets/beers.png';
-import BeerCard from './BeerCard';
+import BeerCardMUI from './BeerCardMUI';
 import Grid from '@mui/material/Grid';
 
-const BeersList = ({ beers }) => {
+const BeersListMUI = ({ beers }) => {
   return (
     <section className={styles.beers}>
-      <Grid container>
+      <Grid container spacing={3}>
         {beers.length > 0 &&
-          beers.map((beer) => <BeerCard key={beer.id} beer={beer} />)}
+          beers.map((beer) => <BeerCardMUI key={beer.id} beer={beer} />)}
       </Grid>
       {beers.length === 0 && (
         <div className={styles['no-results']}>
@@ -23,4 +23,4 @@ const BeersList = ({ beers }) => {
   );
 };
 
-export default BeersList;
+export default BeersListMUI;

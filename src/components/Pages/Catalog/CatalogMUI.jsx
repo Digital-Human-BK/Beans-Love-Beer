@@ -7,7 +7,7 @@ import { BASE_URL, queries, beersPerPage } from '../../../api/api';
 import styles from './Catalog.module.css';
 import ErrorMsg from '../../UI/ErrorMsg';
 import SearchBar from '../../UI/SearchBar';
-import BeersList from '../../UI/BeerList';
+import BeerListMUI from '../../UI/BeerListMUI';
 import LoadingSpinner from '../../UI/LoadingSpinner';
 import PageControls from '../../UI/PageControls';
 import Button from '../../UI/Button';
@@ -38,7 +38,7 @@ const CatalogMUI = () => {
 
       {loading && <LoadingSpinner />}
       {error && <ErrorMsg>{error}</ErrorMsg>}
-      {!loading && !error && <BeersList beers={beers} />}
+      {!loading && !error && <BeerListMUI beers={beers} />}
       {!loading && !error && (
         <PageControls
           onPageChange={pageChangeHandler}
