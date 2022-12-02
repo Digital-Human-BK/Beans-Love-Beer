@@ -1,15 +1,15 @@
 import styles from './BeersList.module.css';
 import beersImg from '../../assets/beers.png';
 import BeerCard from './BeerCard';
+import Grid from '@mui/material/Grid';
 
 const BeersList = ({ beers }) => {
-  console.log('render');
   return (
     <section className={styles.beers}>
-      <ul className={styles['beers-list']}>
+      <Grid container>
         {beers.length > 0 &&
           beers.map((beer) => <BeerCard key={beer.id} beer={beer} />)}
-      </ul>
+      </Grid>
       {beers.length === 0 && (
         <div className={styles['no-results']}>
           <h2 className={styles.message}>
